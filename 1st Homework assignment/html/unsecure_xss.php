@@ -119,7 +119,7 @@
       <ol>
         <?php
           while ($commentsRow = mysql_fetch_assoc($commentsResult)) {
-            echo "<li><span>" . $commentsRow["comment"] . "</span> <strong>" .
+            echo "<li><span>" . htmlspecialchars($commentsRow["comment"]) . "</span> <strong>" .
               $commentsRow["author"] . "</strong> <i>" . $commentsRow["datetime"]
               . "</i></li>";
           }
