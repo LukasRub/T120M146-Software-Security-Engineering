@@ -24,7 +24,7 @@
     $db_selected = mysql_select_db($dbname, $conn);
     if (!$db_selected) {
       $errorMessage = "Can't use database";
-      die ('Can\'t use foo : ' . mysql_error());
+      die ('Can\'t use database : ' . mysql_error());
     }
 
     $query = "SELECT * FROM Users WHERE username='" . $username . "' AND
@@ -57,7 +57,7 @@
       <input type="text" id="username" name="username">
       <label for="username">Password:</label>
       <input type="text" id="password" name="password">
-      <input type="submit" id="unsecure_login" name="unsecure_login">
+      <input type="submit" id="unsecure_login" name="unsecure_login" value="Submit">
       <input type="submit" id="logout" name="logout" value="Logout" action="unsecure_login.php">
     </form>
     <div class="">
