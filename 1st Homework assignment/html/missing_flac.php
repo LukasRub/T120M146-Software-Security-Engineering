@@ -18,7 +18,8 @@
       $errorMessage = "Can't use database";
       die ('Can\'t use database : ' . mysql_error());
     }
-    $query = "DELETE FROM Comments WHERE id = '" . $id . "'";
+    $query = "DELETE FROM Comments WHERE id = '" . $id . "' AND author = '" .
+      $_SESSION['user']['username'] . "'";
     $result = mysql_query($query);
     if (!$result) {
       $errorMessage = "Invalid query";
