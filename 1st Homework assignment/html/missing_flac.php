@@ -139,7 +139,7 @@
       <ol>
         <?php
           while ($commentsRow = mysql_fetch_assoc($commentsResult)) {
-            $listItem = "<li><span>" . htmlspecialchars($commentsRow["comment"]) . "</span> <strong>" .
+            $listItem = "<li><span>" . $commentsRow["comment"] . "</span> <strong>" .
               $commentsRow["author"] . "</strong> <i>" . $commentsRow["datetime"]
               . "</i>";
             if (strcmp($commentsRow["author"], $_SESSION["user"]["username"])
